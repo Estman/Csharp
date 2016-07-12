@@ -31,10 +31,10 @@ private void comboBox1_KeyUp(object sender, KeyEventArgs e)
             {
                 found = this.comboBox1.Items[index].ToString();
                 this.comboBox1.SelectedIndex = index;
- 
+                this.comboBox1.DroppedDown = true;
                 this.comboBox1.SelectionStart = actual.Length;
                 this.comboBox1.SelectionLength = found.Length;
-                this.comboBox1.DroppedDown = true;
+                
  
             }
         }
