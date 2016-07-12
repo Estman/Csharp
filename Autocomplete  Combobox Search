@@ -1,0 +1,40 @@
+comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+
+//or
+private void comboBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            //index of taped text
+            int index;
+            //text found
+            string found;
+            //text written
+            string actual;
+ 
+            //to avoid these keys
+            bool bo = e.KeyCode == Keys.Back || e.KeyCode == Keys.Left
+            || e.KeyCode == Keys.Right || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down
+            || e.KeyCode == Keys.Delete || e.KeyCode == Keys.PageDown
+            || e.KeyCode == Keys.PageUp || e.KeyCode == Keys.End
+            || e.KeyCode == Keys.Home;
+ 
+            if (bo == true)
+                return;
+ 
+            actual = this.comboBox1.Text;
+            index = this.comboBox1.FindString(actual);
+ 
+            //this condition means that there is a result
+            if (index > -1)
+            {
+                found = this.comboBox1.Items[index].ToString();
+                this.comboBox1.SelectedIndex = index;
+ 
+                this.comboBox1.SelectionStart = actual.Length;
+                this.comboBox1.SelectionLength = found.Length;
+                this.comboBox1.DroppedDown = true;
+ 
+            }
+        }
