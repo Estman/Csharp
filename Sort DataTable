@@ -1,4 +1,4 @@
-Sort Numbers ind atatable
+Sort Numbers in datatable
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                    
