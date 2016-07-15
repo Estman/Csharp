@@ -1,0 +1,20 @@
+Sort Numbers ind atatable
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                   
+                    DataTable dt2 = dt.Clone();
+                    dt2.Columns["name"].DataType = Type.GetType("System.Int32");
+
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dt2.ImportRow(dr);
+                    }
+                    dt2.AcceptChanges();
+                    DataView dv2 = dt2.DefaultView;
+                    dv2.Sort = "name ASC";
+              
+Sort text datatable
+
+                    DataView dv = dt.DefaultView;
+                    dv.Sort = "name asc";
+                    DataTable sortedDT = dv.ToTable();
