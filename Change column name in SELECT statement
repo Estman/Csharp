@@ -1,0 +1,10 @@
+Oracle 
+
+SELECT mycolumn as "MyNewColumnName" 
+  from MyTable
+  
+  
+SQL
+
+SELECT mycolumn as 'MyNewColumnName'
+  from MyTable
