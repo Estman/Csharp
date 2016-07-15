@@ -1,0 +1,23 @@
+Use the @ symbol in front of a string to form a verbatim string literal
+
+
+SqlConnection cn = null;
+cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlConn"].ToString());
+cn.Open();
+SqlCommand cmd = new SqlCommand((@"SELECT DISTINCT
+        tblSBT.sname,
+        tblSBDetails.sid,
+        tblSBT.sname,
+        tblSBDetails.sid, 
+        tblSBDetails.assignedtrack,
+        tblSBDetails.maxtrack,
+        tblSBDetails.currentvals,
+        tblSBDetails.maxvals,  
+        tblSBDetails.lastupdated
+        FROM    tblSBT (NOLOCK)
+                    LEFT OUTER JOIN tblSBDetails (NOLOCK)
+                        ON .sid = tblSBDetails.sid
+        WHERE   tblSBDetails.lastupdated > DateADD(n, -5, GETDATE())
+        ORDER BY    tblSBT.sname"), cn);
+
+var myreader = cmd.ExecuteReader();
