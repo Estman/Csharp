@@ -1,0 +1,12 @@
+cmb_name.DisplayMember = "name";
+cmb_name.DataSource = dt;
+
+// Ignore ValueMember and Selected Value entirely
+When you want to retrieve the selected item
+
+var selectedRow = (cmb_name.SelectedItem as DataRowView );
+MessageBox.Show(selectedRow.Row[0].ToString());
+MessageBox.Show(selectedRow.Row[1].ToString());
+MessageBox.Show(selectedRow.Row[2].ToString());
+MessageBox.Show(selectedRow.Row[name].ToString());
+.....
