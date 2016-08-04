@@ -1,0 +1,9 @@
+treeListLookUpEdit1
+
+ //Collapse all nodes
+            treeListLookUpEdit1.Properties.AutoExpandAllNodes = false;
+            treeListLookUpEdit1.Properties.TreeList.CollapseAll();
+//show parent node in search
+ treeListLookUpEdit1TreeList.OptionsFilter.FilterMode = FilterMode.Extended;
+ 
+ 
