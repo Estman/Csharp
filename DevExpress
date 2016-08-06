@@ -7,3 +7,9 @@ treeListLookUpEdit1
  treeListLookUpEdit1TreeList.OptionsFilter.FilterMode = FilterMode.Extended;
  
  
+ //get keyValue
+            object keyValue = treeList1.FocusedNode[treeList1.KeyFieldName];
+
+ //get  ParentValue
+            object ParentValue = treeList1.FocusedNode[treeList1.ParentFieldName];
+ 
