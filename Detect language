@@ -4,6 +4,7 @@
             Regex rus = new Regex(@"[А-Яа-я ]");
             Regex eng = new Regex(@"[A-Za-z ]");
             //Regex regex = new Regex(@"[ა-ჰა-ჰ-ჰ0-9 .,-=+(){}\[\]\\]");
+            //[АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя]
             MatchCollection geomatches = geo.Matches(inputstring);
             MatchCollection rusmatches = rus.Matches(inputstring);
             MatchCollection engmatches = eng.Matches(inputstring);
