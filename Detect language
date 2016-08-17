@@ -1,0 +1,32 @@
+ public bool IsEnglish(string inputstring)
+        {
+            Regex geo = new Regex(@"[ა-ჰა-ჰ ]");
+            Regex rus = new Regex(@"[А-Яа-я ]");
+            Regex eng = new Regex(@"[A-Za-z ]");
+            //Regex regex = new Regex(@"[ა-ჰა-ჰ-ჰ0-9 .,-=+(){}\[\]\\]");
+            MatchCollection geomatches = geo.Matches(inputstring);
+            MatchCollection rusmatches = rus.Matches(inputstring);
+            MatchCollection engmatches = eng.Matches(inputstring);
+
+
+            if (geomatches.Count.Equals(inputstring.Length))
+            {
+                MessageBox.Show("Georgian");
+                return true;
+            }
+            else if (rusmatches.Count.Equals(inputstring.Length))
+            {
+                MessageBox.Show("Russian");
+                return true;
+            }
+            else if (engmatches.Count.Equals(inputstring.Length))
+            {
+                MessageBox.Show("English");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Other");
+                return false;
+            }
+        }
