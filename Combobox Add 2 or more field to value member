@@ -8,5 +8,5 @@ var selectedRow = (cmb_name.SelectedItem as DataRowView );
 MessageBox.Show(selectedRow.Row[0].ToString());
 MessageBox.Show(selectedRow.Row[1].ToString());
 MessageBox.Show(selectedRow.Row[2].ToString());
-MessageBox.Show(selectedRow.Row[name].ToString());
+MessageBox.Show(selectedRow.Row["name"].ToString());
 .....
