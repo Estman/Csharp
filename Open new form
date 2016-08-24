@@ -1,0 +1,5 @@
+ // Create a new instance of the Form2 class
+    Form2 settingsForm = new Form2();
+
+    // Show the settings form
+    settingsForm.Show();
