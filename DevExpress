@@ -13,3 +13,32 @@ treeListLookUpEdit1
  //get  ParentValue
             object ParentValue = treeList1.FocusedNode[treeList1.ParentFieldName];
  
+ 
+ Filter only parent node and show child nodes
+ 
+ private void treeList1_FilterNode(object sender, DevExpress.XtraTreeList.FilterNodeEventArgs e)
+        {
+            TreeList tree = sender as TreeList;
+            if (string.IsNullOrEmpty(tree.FindFilterText)) return;
+            e.Node.Visible = IsNodeVisible(e.Node);
+            e.Handled = true;
+        }
+
+        private bool IsNodeVisible(TreeListNode node)
+        {
+            if (node.ParentNode == null)
+            {
+                foreach(TreeListColumn column in node.TreeList.VisibleColumns)
+                {
+                    object val = node[column.FieldName];
+                    if(val != null && val.ToString().ToUpper().Equals(node.TreeList.FindFilterText.ToUpper()))
+                        return true;
+                }
+                return false;
+            }
+           return IsNodeVisible(node.ParentNode);
+        }
+        
+        //stop the matching text from being highlighted
+         treeList1.OptionsFind.HighlightFindResults = false;
+        
