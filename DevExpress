@@ -54,3 +54,13 @@ treeListLookUpEdit1
         {
             treeList1.CollapseAll();
         }
+
+        //---------------------------------------------
+        //Find in Hidden columns
+        //the only option I have is to show the hidden columns before a search then hide them again
+        //unhide
+        treeList1.Columns["Parent ID"].Visible = true;
+         //some logic
+         //hide
+        treeList1.Columns["Parent ID"].Visible = false;
+                  
