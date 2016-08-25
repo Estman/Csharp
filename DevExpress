@@ -38,15 +38,19 @@ treeListLookUpEdit1
             }
            return IsNodeVisible(node.ParentNode);
         }
-        
+       
+        //stop the matching text from being highlighted
+         treeList1.OptionsFind.HighlightFindResults = false;
+         
         //---------------------------------------------
-        //call AfterExpand Event
+        //call AfterExpand Event. 
          private void treeList1_AfterExpand(object sender, NodeEventArgs e)
         {
             treeList1.BestFitColumns();
         }
-        
-        
-        //stop the matching text from being highlighted
-         treeList1.OptionsFind.HighlightFindResults = false;
-        
+        //---------------------------------------------
+        //call Load Event. collapseallnodes at startup
+         private void treeList1_Load(object sender, EventArgs e)
+        {
+            treeList1.CollapseAll();
+        }
