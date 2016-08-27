@@ -64,3 +64,8 @@ treeListLookUpEdit1
          //hide
         treeList1.Columns["Parent ID"].Visible = false;
                   
+         //---------------------------------------------
+         //Setting the FocusedNode in a TreeList to null
+         int index = treeList1.TopVisibleNodeIndex;
+         treeList1.FocusedNode = null;
+         treeList1.TopVisibleNodeIndex = index;
