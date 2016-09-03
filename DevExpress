@@ -69,3 +69,9 @@ treeListLookUpEdit1
          int index = treeList1.TopVisibleNodeIndex;
          treeList1.FocusedNode = null;
          treeList1.TopVisibleNodeIndex = index;
+
+
+         //---------------------------------------------
+         //hide Group Panel (Header) in gridcontrol 
+         gridView1.OptionsView.ShowGroupPanel = false;
+                
