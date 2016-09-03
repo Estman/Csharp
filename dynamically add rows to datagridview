@@ -1,0 +1,17 @@
+            //create datatable and columns
+            DataTable dt = new DataTable();
+            dt.Columns.Add("name1", typeof(string));
+            dt.Columns.Add("name2", typeof(string));
+            dt.Columns.Add("name3", typeof(string));
+            dt.Columns.Add("name4", typeof(string));
+            
+            //create new data row
+            DataRow dr = dt.NewRow();
+            //
+            for (int i = 0; i < 4; i++)
+            {
+                dr[i] = dt.Rows.Add(null, null, null, null);
+                DataView dataView = new DataView(dt);
+                dataView.AllowNew = false;
+                dataGridView1.DataSource = dt;
+            }
