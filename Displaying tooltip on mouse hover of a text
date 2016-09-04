@@ -1,0 +1,2 @@
+System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+ToolTip1.SetToolTip(this.Button1, "Button Info");
