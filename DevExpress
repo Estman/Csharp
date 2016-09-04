@@ -75,3 +75,11 @@ treeListLookUpEdit1
          //hide Group Panel (Header) in gridcontrol 
          gridView1.OptionsView.ShowGroupPanel = false;
                 
+         //---------------------------------------------
+         //iterate through treelist
+           for (int i = 0; i < treeList1.Nodes.Count; i++)
+            {
+                some logic
+            }
+
+            
