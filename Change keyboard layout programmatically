@@ -32,3 +32,29 @@
     {
         SetKeyboardLayout(GetInputLanguageByName("English"));
     }
+
+
+///////////////////////////////
+//for datagrid view
+  private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                // MessageBox.Show(dataGridView1.CurrentCell.ColumnIndex.ToString()); 
+                if (dataGridView1.CurrentRow.Index == 0)
+                {
+                    SetKeyboardLayout(GetInputLanguageByName("English"));
+
+                }
+                if (dataGridView1.CurrentRow.Index == 1)
+                {
+                    SetKeyboardLayout(GetInputLanguageByName("Geo"));
+                }
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+        }
