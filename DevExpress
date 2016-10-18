@@ -83,3 +83,31 @@ treeListLookUpEdit1
             }
 
             
+ foreach (TreeListNode node in treeList1.Nodes)
+            {
+                node.Expanded = false;
+                foreach (TreeListNode _node in node.Nodes)
+                {
+                    if ((_node.GetValue("გაუქმებული").ToString()) == "0")
+                    {
+                       // MessageBox.Show("Test");
+                      //  _node.Expanded = true;
+                        node.Expanded = true;
+                    }
+                }
+            }
+
+
+            //TreeListColumn passive = treeList1.Columns["გაუქმებული"];
+           
+            //List<TreeListNode> nodes = treeList1.GetNodeList();
+            //foreach (TreeListNode node in nodes)
+            //{
+            //    if (node.GetValue("გაუქმებული").ToString() == "0")
+            //   // if (node.GetDisplayText(passive) == "0")
+            //    {
+            //        MessageBox.Show("Test");
+            //        node.Expanded = true;
+                   
+            //    }
+            //}
