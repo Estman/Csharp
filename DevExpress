@@ -111,3 +111,20 @@ treeListLookUpEdit1
                    
             //    }
             //}
+
+
+
+//Clearing a text in a LookUpEdit control
+
+AllowNullImput = true;
+
+void lookUpEdit1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (lookUpEdit1.SelectionLength == lookUpEdit1.Text.Length && (e.KeyData == Keys.Back || e.KeyData == Keys.Delete))
+            {
+                SendKeys.Send("^~");
+                SendKeys.Send("{DEL}");
+                lookUpEdit1.EditValue = null;
+                e.Handled = true;
+            }
+        }
