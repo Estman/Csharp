@@ -1,0 +1,19 @@
+o mimic a key press on Enter, for example, write this:
+SendKeys.Send("{ENTER}");
+// Or this:
+SendKeys.Send("~");
+
+o repeat a key (pretend like user pressed it multiple times), use curly braces and an integer:
+// Go up 7 lines in a text area:
+SendKeys.Send("{UP 7}");
+// To type three times the letter 'w':
+SendKeys.Send("{w 3}");
+×To hit a specific keyboard shortcut, combine or exclude modifier keys:
+// Let us "Save As" in a classic-menu program with Alt+F,A
+SendKeys.Send("%(FA)");
+// Let's make text bold and type an "A": Ctrl+B, release, A
+SendKeys.Send("^BA");
+
+
+
+https://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys.send(v=vs.110).aspx
