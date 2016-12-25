@@ -1,0 +1,8 @@
+diskutil erasevolume HFS+ raffpioII `hdiutil attach -nomount ram://500000`;
+sudo rm -Rf System/Library/Caches;
+mkdir /Volumes/raffpioII/Caches;
+sudo ln -s /Volumes/raffpioII/Caches /System/Lib
+
+
+
+http://raffpio.altervista.org/forum/viewtopic.php?f=15&t=127&start=40
