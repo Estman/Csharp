@@ -1,0 +1,2 @@
+SELECT FORMAT([Phone Numbers],'(###) ###-####') AS [Formatted Phone]
+FROM tbl_sample
