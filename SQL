@@ -1,0 +1,20 @@
+DECLARE @f nvarchar(15)
+DECLARE @m nvarchar(15)
+DECLARE @u nvarchar(15)
+
+select @f = gender from coursestud where gender = 'f'
+select @m = gender from coursestud where gender = 'm'
+select @u = gender from coursestud where gender = 'u'
+
+--if gender = female:
+set @f = 'Female'
+--if gender = male:
+set @m = 'Male'
+--if gender = unknown:
+set @u = 'Unknown'
+
+Select @f as Gender from coursestud where gender  = 'f'
+union
+select @u as Gender from coursestud where gender  = 'u'
+union 
+select @m as Gender from coursestud where gender  = 'm'
