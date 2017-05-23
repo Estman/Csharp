@@ -1,0 +1,17 @@
+@ECHO OFF
+setlocal EnableExtensions EnableDelayedExpansion
+
+rem res=fsutil volume diskfree Z:
+
+FOR /F "tokens=* USEBACKQ" %%F IN (`fsutil volume diskfree Z:`) DO (
+SET var=%%F
+)
+ ECHO %var%
+
+
+IF "31457280" LEQ "%var%" (
+	@RD /S /Q "Z:\Temp"
+    ECHO Files has been deleted.
+) ELSE (
+    ECHO Disk isn't full enough.
+)
