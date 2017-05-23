@@ -1,0 +1,2 @@
+//filename(date).rar - maximum compression.
+Rar.exe -ag(YYYY-MM-DD) -ep1 -m5 -s
