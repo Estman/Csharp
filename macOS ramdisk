@@ -19,3 +19,9 @@ Save somewhere, for example you can make an "Applications" folder in your HOME (
 Go to System Preferences -> Accounts -> Login items
 Add this app
 test & done ;)
+
+
+
+
+show folder size 
+sudo du -d 1 -x -c -g /
